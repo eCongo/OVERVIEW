@@ -1,0 +1,105 @@
+Project Name: e-Congo
+
+Task: make an ecommerce webapp to practice db and ui using asp.net and sql server
+
+
+- ASP.net MVC
+- Database and CRUD
+- Clear File Structure and Commented Code
+- Github and good project practice (like having READMEs and stuff)
+
+-----
+FEATURES / FUNCTIONS:
+
+- create account as seller / buyer
+- log in as seller / buyer / admin (?)
+
+- seller can:
+	+ add products
+	+ edit products
+	+ view orders, update status (to 'shipped')
+	+ see balance, withdraw balance
+
+- buyer can:
+	+ search products
+	+ add product to cart
+	+ go to checkout
+	+ view orders and status ("purchased, shipped, received")
+	+ add product to wishlist
+
+------
+UI / UX:
+
+- nav bar with logo, search bar, Categories, User, and Cart
+	+ logo can be clicked to go back to front page
+	+ Categories button drops down to select from product categories
+	+ User button drops down to 'Account', 'Orders', 'Wishlist'
+	+ Cart button goes to Checkout also shows number of items in cart next to it
+
+- front page
+	+ shows cool graphic
+	+ shows newest items added
+	+ shows a few items within a category inside a carousel card IF the category has items
+
+- category page
+	+ has sidebar to select other categories
+	+ can be sorted by price, date added, etc
+
+- product page
+
+- checkout page
+
+
+------
+ACTION PROCESSES:
+
+- Checkout
+	+ verify/edit cart
+	+ choose payment method
+	+ discounts, shipping, salestax, display total, "complete purchase" button
+- Add a Product
+- From Searching to Buying a product
+- Order Fulfillment
+
+...
+
+
+------
+DATA ORGANIZATION:
+
+- buyers
+	id
+	username
+	email
+	password 	 	//encrypted?
+	address
+	cart 			//fk: products.id
+
+- sellers
+	id
+	name
+	logo
+	address 		//used for salestax
+	
+
+
+- products
+	id
+	name
+	category		// "clothing" , "accessories" , "electronics", "household" , "children"
+	seller			//fk: seller.id
+	unit price		// this is for sellers (might remove)
+	selling price		// this is what price shows on the store
+	images
+	description
+
+- orders
+	id
+	date_ordered		
+	buyer			//fk: buyer.id
+	status			"payed" , "shipped" , "delivered"
+	items			list of product.id
+
+
+
+
